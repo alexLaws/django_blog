@@ -14,6 +14,9 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+    def get_absolute_url(self):
+        return "/posts/%i/" % self.pk
+
 
 class Category(models.Model):
     name = models.CharField(max_length=128)
@@ -24,4 +27,4 @@ class Category(models.Model):
         return self.name
 
     class Meta:
-        verbose_name_plural = 'Categories' 
+        verbose_name_plural = 'Categories'
